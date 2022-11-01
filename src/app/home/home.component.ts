@@ -13,6 +13,7 @@ import { ComponentTwo } from './ui/component-two.component';
     <app-component-one></app-component-one>
     <app-component-two></app-component-two>
   `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
   logChangeDetection() {

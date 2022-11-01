@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-component-one',
@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
     <p>Component one</p>
   `,
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ComponentOne {
   logChangeDetection() {

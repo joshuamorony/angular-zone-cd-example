@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CoolButtonComponent } from 'src/app/shared/ui/cool-button.component';
 
 @Component({
@@ -12,6 +12,7 @@ import { CoolButtonComponent } from 'src/app/shared/ui/cool-button.component';
     <app-cool-button></app-cool-button>
   `,
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ComponentTwo {
   logChangeDetection() {
