@@ -1,13 +1,14 @@
 import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { PushModule } from '@rx-angular/template';
 import { DummyService } from 'src/app/shared/data-access/dummy.service';
 import { CoolButtonComponent } from 'src/app/shared/ui/cool-button.component';
 
 @Component({
   selector: 'app-component-two',
-  imports: [CoolButtonComponent, NgIf, AsyncPipe],
+  imports: [CoolButtonComponent, NgIf, AsyncPipe, PushModule],
   template: `
-    <ng-container *ngIf="dummyService.dummyObs$ | async"></ng-container>
+    <ng-container *ngIf="dummyService.dummyObs$ | push"></ng-container>
     <ng-container *ngIf="logChangeDetection()"></ng-container>
     <button (click)="({})">ComponentTwo</button>
     <p>Component two</p>
