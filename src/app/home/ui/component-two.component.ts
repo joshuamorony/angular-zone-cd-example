@@ -8,10 +8,12 @@ import { CoolButtonComponent } from 'src/app/shared/ui/cool-button.component';
   selector: 'app-component-two',
   imports: [CoolButtonComponent, NgIf, AsyncPipe, PushModule, LetModule],
   template: `
-    <ng-container *ngIf="dummyService.dummyObs$ | push"> </ng-container>
     <ng-container *rxLet="dummyService.dummyObs$ as val">
       {{ val }}
     </ng-container>
+
+    <p>{{ dummyService.dummyObs$ | push }}</p>
+
     <ng-container *ngIf="logChangeDetection()"></ng-container>
     <button (click)="({})">ComponentTwo</button>
     <p>Component two</p>
